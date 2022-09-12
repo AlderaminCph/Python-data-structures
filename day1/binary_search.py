@@ -31,15 +31,14 @@ def search(nums, target):
     first = 0
     last = len(nums) - 1
 
-    while first < last:
+    while first <= last:
         mid = (first + last) // 2
         midval = nums[mid]
 
         if midval < target:
-            first = midval + 1
+            first = mid + 1
         elif midval > target:
-            last = midval - 1
+            last = mid - 1
         else:
             return mid
-
     return -1
