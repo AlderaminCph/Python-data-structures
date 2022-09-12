@@ -22,10 +22,24 @@ Explanation: 2 does not exist in nums so return -1
 """
 
 
-class Solution(object):
-    def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+def search(nums, target):
+    """
+    :type nums: List[int]
+    :type target: int
+    :rtype: int
+    """
+    first = 0
+    last = len(nums) - 1
+
+    while first < last:
+        mid = (first + last) // 2
+        midval = nums[mid]
+
+        if midval < target:
+            first = midval + 1
+        elif midval > target:
+            last = midval - 1
+        else:
+            return mid
+
+    return -1
