@@ -24,25 +24,24 @@ an O(n) solution using a different approach?
 """
 
 
-class Solution(object):
-    def sortedSquares(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-        # two pointers: at the beginnig of array and at the end
-        left = 0
-        right = len(nums) - 1
+def sortedSquares(nums):
+    """
+    :type nums: List[int]
+    :rtype: List[int]
+    """
+    # two pointers: at the beginnig of array and at the end
+    left = 0
+    right = len(nums) - 1
 
-        tracker = len(nums) - 1
-        squared_array = [0 for i in nums]
+    tracker = len(nums) - 1
+    squared_array = [0 for i in nums]
 
-        while tracker >= 0:
-            if abs(nums(left)) >= abs(nums(right)):
-                squared_array[tracker] = nums[left] ** 2
-                left += 1
-            else:
-                squared_array[tracker] = nums[right] ** 2
-                right -= 1
-            tracker -= 1
-        return squared_array
+    while tracker >= 0:
+        if abs(nums[left]) >= abs(nums[right]):
+            squared_array[tracker] = nums[left] ** 2
+            left += 1
+        else:
+            squared_array[tracker] = nums[right] ** 2
+            right -= 1
+        tracker -= 1
+    return squared_array
