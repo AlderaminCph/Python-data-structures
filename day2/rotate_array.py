@@ -30,10 +30,37 @@ Follow up:
 """
 
 
-class Solution(object):
-    def rotate(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
+def gcd(a, b):
+    """
+    Function to get gcd of a and b
+    """
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+
+
+def rotate(nums, k):
+    """
+    Solution (A Juggling Algorithm): divide the array
+    in different sets where number of sets
+    is equal to GCD of len(nums)
+    and k and move the elements within sets.
+    :type nums: List[int]
+    :type k: int
+    :rtype: None Do not return anything, modify nums in-place instead.
+    """
+    for i in range(gcd(k, len(nums))):
+        # move i-th values of blocks
+        n = len(nums)
+        temp = nums[(n - 1) - i]
+        j = i
+        while True:
+            d = j + k
+            if d >= len(nums):
+                d = d - len(nums)
+            if d == i:
+                break
+            nums[(n - 1) - j] = nums[(n - 1) - d]
+            j = d
+        nums[(n - 1) - j] = temp
