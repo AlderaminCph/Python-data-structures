@@ -50,17 +50,19 @@ def rotate(nums, k):
     :type k: int
     :rtype: None Do not return anything, modify nums in-place instead.
     """
-    for i in range(gcd(k, len(nums))):
-        # move i-th values of blocks
+    if len(nums) != 1:
         n = len(nums)
-        temp = nums[(n - 1) - i]
-        j = i
-        while True:
-            d = j + k
-            if d >= len(nums):
-                d = d - len(nums)
-            if d == i:
-                break
-            nums[(n - 1) - j] = nums[(n - 1) - d]
-            j = d
-        nums[(n - 1) - j] = temp
+        k = k % n
+        for i in range(gcd(k, len(nums))):
+            # move i-th values of blocks
+            temp = nums[(n - 1) - i]
+            j = i
+            while True:
+                d = j + k
+                if d >= len(nums):
+                    d = d - len(nums)
+                if d == i:
+                    break
+                nums[(n - 1) - j] = nums[(n - 1) - d]
+                j = d
+            nums[(n - 1) - j] = temp
