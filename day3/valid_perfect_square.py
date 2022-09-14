@@ -26,10 +26,13 @@ def isPerfectSquare(num):
     """
     left = 1
     right = num
-
+    if num == 1:
+        return True
     while left < right:
         mid = int(left + (right - left) / 2)
+        print("mid", mid)
         sq_mid = mid * mid
+        print("sq_mid", sq_mid)
         if sq_mid == num:
             return True
         elif sq_mid > num:
