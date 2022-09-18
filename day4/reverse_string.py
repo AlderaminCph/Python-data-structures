@@ -14,9 +14,10 @@ in-place with O(1) extra memory.
 """
 
 import doctest
+from typing import List
 
 
-def reverseString(s):
+def reverseString(s: List[str]) -> None:
     """
     :type s: List[str]
     :rtype: None Do not return anything, modify s in-place instead.
