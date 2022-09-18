@@ -6,13 +6,13 @@ whitespace and initial word order.
 
 Example 1:
 
->>>reverseWords("Let's take LeetCode contest")
-"s'teL ekat edoCteeL tsetnoc"
+>>> reverseWords("Lets take LeetCode contest")
+'steL ekat edoCteeL tsetnoc'
 
 Example 2:
 
->>>reverseWords("God Ding")
-"doG gniD"
+>>> reverseWords("God Ding")
+'doG gniD'
 
 """
 import doctest
@@ -23,16 +23,17 @@ def reverseWords(s):
     :type s: str
     :rtype: str
     """
-    res = []
-    for word in s.split():
+    words = s.split()
+    for i in range(len(words)):
         left = 0
-        right = len(word) - 1
+        right = len(words[i]) - 1
+        temp = list(words[i])
         while left < right:
-            word[left], word[right] = word[right], word[left]
+            temp[left], temp[right] = temp[right], temp[left]
             left += 1
             right -= 1
-        res.append(word)
-    return (" ").join(res)
+        words[i] = "".join(temp)
+    return (" ").join(words)
 
 
 doctest.testmod()
