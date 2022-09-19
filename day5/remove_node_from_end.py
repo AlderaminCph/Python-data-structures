@@ -40,7 +40,7 @@ class LinkedList:
         self.head = new_node
 
 
-def removeNthFromEnd(self, head, n):
+def removeNthFromEnd(head, n):
     """
     :type head: ListNode
     :type n: int
