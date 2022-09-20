@@ -21,7 +21,7 @@ Return the modified image after performing the flood fill.
 Example 1:
 
 >>> floodFill([[1,1,1],[1,1,0],[1,0,1]],1,1,2)
-[[2,2,2],[2,2,0],[2,0,1]]
+[[2, 2, 2], [2, 2, 0], [2, 0, 1]]
 
 Explanation: From the center of the image with
 position (sr, sc) = (1, 1) (i.e., the red pixel),
@@ -34,7 +34,7 @@ Note the bottom corner is not colored 2, because it is not
 Example 2:
 
 >>> floodFill([[0,0,0],[0,0,0]],0,0,0)
-[[0,0,0],[0,0,0]]
+[[0, 0, 0], [0, 0, 0]]
 
 Explanation: The starting pixel is already colored 0,
 so no changes are made to the image.
@@ -46,14 +46,14 @@ from typing import List
 
 
 def floodFill(
-    self, image: List[List[int]], sr: int, sc: int, color: int
+    image: List[List[int]], sr: int, sc: int, color: int
 ) -> List[List[int]]:
     """
     Solution Idea:
     """
     if image is None or image[sr][sc] == color:
         return image
-    fill(image, sr, sc, image, image[sr][sc], color)
+    fill(image, sr, sc, image[sr][sc], color)
     return image
 
 
