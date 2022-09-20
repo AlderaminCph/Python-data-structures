@@ -10,13 +10,13 @@ The area of an island is the number of cells with a value 1 in the island.
 
 Return the maximum area of an island in grid. If there is no island, return 0.
 
->>> maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],
-[0,0,0,0,0,0,0,1,1,1,0,0,0],
-[0,1,1,0,1,0,0,0,0,0,0,0,0],
-[0,1,0,0,1,1,0,0,1,0,1,0,0],
-[0,1,0,0,1,1,0,0,1,1,1,0,0],
-[0,0,0,0,0,0,0,0,0,0,1,0,0],
-[0,0,0,0,0,0,0,1,1,1,0,0,0],
+>>> maxAreaOfIsland([[0,0,1,0,0,0,0,1,0,0,0,0,0],\
+[0,0,0,0,0,0,0,1,1,1,0,0,0],\
+[0,1,1,0,1,0,0,0,0,0,0,0,0],\
+[0,1,0,0,1,1,0,0,1,0,1,0,0],\
+[0,1,0,0,1,1,0,0,1,1,1,0,0],\
+[0,0,0,0,0,0,0,0,0,0,1,0,0],\
+[0,0,0,0,0,0,0,1,1,1,0,0,0],\
 [0,0,0,0,0,0,0,1,1,0,0,0,0]])
 6
 
@@ -25,8 +25,8 @@ because the island must be connected 4-directionally.
 
 Example 2:
 
->>> maxAreaOfIsland([0,0,0,0,0,0,0,0]])
-Output: 0
+>>> maxAreaOfIsland([[0,0,0,0,0,0,0,0]])
+0
 
 """
 
@@ -50,7 +50,7 @@ def maxAreaOfIsland(grid: List[List[int]]) -> int:
         # if we got out of bounds
         if (
             row < 0
-            or row == row
+            or row == rows
             or col < 0
             or col == cols
             or grid[row][col] == 0
