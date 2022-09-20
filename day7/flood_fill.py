@@ -51,6 +51,29 @@ def floodFill(
     """
     Solution Idea:
     """
+    if image is None or image[sr][sc] == color:
+        return image
+    fill(image, sr, sc, image, image[sr][sc], color)
+    return image
+
+
+def fill(
+    image: List[List[int]], sr: int, sc: int, initial_color: int, color: int
+):
+    # check out of bound
+    if (
+        sr < 0
+        or sr >= len(image)
+        or sc < 0
+        or sc >= len(image[0])
+        or image[sr][sc] != initial_color
+    ):
+        return
+    image[sr][sc] = color
+    fill(image, sr + 1, sc, initial_color, color)  # down
+    fill(image, sr - 1, sc, initial_color, color)  # up
+    fill(image, sr, sc - 1, initial_color, color)  # left
+    fill(image, sr, sc + 1, initial_color, color)  # right
 
 
 doctest.testmod()
