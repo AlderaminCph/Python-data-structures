@@ -36,8 +36,41 @@ from typing import List
 
 def maxAreaOfIsland(grid: List[List[int]]) -> int:
     """
-    Solution
+    Solution idea: depth first search (DFS)
     """
+    rows, cols = len(grid), len(grid[0])
+    visit = set()  # visit hash set
+
+    def dfs(row: int, col: int) -> int:
+        """
+        Performs depth first search to calculates
+        the area of an island
+        :return area of an island
+        """
+        # if we got out of bounds
+        if (
+            row < 0
+            or row == row
+            or col < 0
+            or col == cols
+            or grid[row][col] == 0
+            or (row, col) in visit
+        ):
+            return 0
+        visit.add((row, col))
+        return (
+            1
+            + dfs(row + 1, col)
+            + +dfs(row - 1, col)
+            + +dfs(row, col + 1)
+            + +dfs(row, col - 1)
+        )
+
+    max_area = 0
+    for row in range(rows):
+        for col in range(cols):
+            max_area = max(max_area, dfs(row, col))
+    return max_area
 
 
 doctest.testmod()
