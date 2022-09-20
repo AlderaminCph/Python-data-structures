@@ -12,13 +12,13 @@ of s1's permutations is the substring of s2.
 Example 1:
 
 >>> checkInclusion("ab","eidbaooo")
-true
+True
 
 Explanation: s2 contains one permutation of s1 ("ba").
 
 Example 2:
 >>> checkInclusion("ab","eidboaoo")
-false
+False
 
 """
 
@@ -38,7 +38,7 @@ def checkInclusion(s1: str, s2: str) -> bool:
 
     left = 0
     right = 0
-    while right < len(1):
+    while right < len(s1):
         s1hash[ord(s1[right]) - ord("a")] += 1
         s2hash[ord(s2[right]) - ord("a")] += 1
         right += 1
