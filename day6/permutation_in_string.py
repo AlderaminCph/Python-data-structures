@@ -27,8 +27,33 @@ import doctest
 
 def checkInclusion(s1: str, s2: str) -> bool:
     """
-    Solution Idea:
+    Solution Idea: sliding window and two hash maps
     """
+    if len(s1) > len(s2):
+        return False
+
+    # two hash vectors with size of an alphabeth
+    s1hash = [0] * 26
+    s2hash = [0] * 26
+
+    left = 0
+    right = 0
+    while right < len(1):
+        s1hash[ord(s1[right]) - ord("a")] += 1
+        s2hash[ord(s2[right]) - ord("a")] += 1
+        right += 1
+
+    right -= 1  # to point right to the end of the window
+
+    while right < len(s2):
+        if s1hash == s2hash:
+            return True
+        right += 1
+        if right != len(s2):
+            s2hash[ord(s2[right]) - ord("a")] += 1
+        s2hash[ord(s2[left]) - ord("a")] -= 1
+        left += 1
+    return False
 
 
 doctest.testmod()
