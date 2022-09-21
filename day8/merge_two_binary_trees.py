@@ -27,7 +27,8 @@ Output: [2,2]
 
 """
 
-from typing import Optional
+from typing import Optional, List
+import doctest
 
 # Definition for a binary tree node.
 
@@ -44,7 +45,7 @@ class TreeNode:
     def __str__(self) -> str:
         return str(self.val)
 
-    def to_binary_tree(items: list[int]):
+    def to_binary_tree(items: List[int]):
         """Create BT from list of values."""
         n = len(items)
         if n == 0:
@@ -62,6 +63,37 @@ class TreeNode:
 
         return inner()
 
+    def create_list(tree, templist=[]):
+        """
+        >>> tree = TreeNode(2, TreeNode(29, TreeNode(26)),\
+        TreeNode(4, None, TreeNode(2, TreeNode(9))))
+        >>> TreeNode.create_list(tree)
+        [2, 29, 4, 26, None, None, 2, None, None, \
+None, None, None, None, 9, None]
+
+        """
+        items = []
+        queue = [tree]
+
+        while queue:
+            copy = queue[:]
+            queue = []
+
+            for item in copy:
+                if item is None:
+                    items.append(None)
+                    queue.append(None)
+                    queue.append(None)
+                else:
+                    items.append(item.val)
+                    queue.append(item.left)
+                    queue.append(item.right)
+
+            if all((x is None for x in queue)):
+                break
+
+        return items
+
 
 class Solution:
     def mergeTrees(
@@ -77,3 +109,6 @@ class Solution:
         t1.left = self.mergeTrees(t1.left, t2.left)
         t1.right = self.mergeTrees(t1.right, t2.right)
         return t1
+
+
+doctest.testmod()
