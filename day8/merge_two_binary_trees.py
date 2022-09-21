@@ -43,24 +43,13 @@ class Solution:
     def mergeTrees(
         self, t1: Optional[TreeNode], t2: Optional[TreeNode]
     ) -> Optional[TreeNode]:
-        if not t1 and t2:
-            return None
+        if not t1:
+            return t2
 
-        if t1:
-            v1 = t1.val
-        else:
-            v1 = 0
+        if not t2:
+            return t1
 
-        if t2:
-            v2 = t2.val
-        else:
-            v2 = 0
-
-        root = TreeNode(v1 + v2)
-        root.left = self.mergeTrees(
-            t1.left if t1 else None, t2.left if t2 else None
-        )
-        root.right = self.mergeTrees(
-            t1.right if t1 else None, t2.right if t2 else None
-        )
-        return root
+        t1.val += t2.val
+        t1.left = self.mergeTrees(t1.left, t2.left)
+        t1.right = self.mergeTrees(t1.right, t2.right)
+        return t1
