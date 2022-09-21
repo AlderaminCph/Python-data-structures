@@ -28,20 +28,39 @@ Output: [2,2]
 """
 
 from typing import Optional
-import TreeNode
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class Solution:
     def mergeTrees(
-        self, root1: Optional[TreeNode], root2: Optional[TreeNode]
+        self, t1: Optional[TreeNode], t2: Optional[TreeNode]
     ) -> Optional[TreeNode]:
-        """
-        Solution
-        """
+        if not t1 and t2:
+            return None
+
+        if t1:
+            v1 = t1.val
+        else:
+            v1 = 0
+
+        if t2:
+            v2 = t2.val
+        else:
+            v2 = 0
+
+        root = TreeNode(v1 + v2)
+        root.left = self.mergeTrees(
+            t1.left if t1 else None, t2.left if t2 else None
+        )
+        root.right = self.mergeTrees(
+            t1.right if t1 else None, t2.right if t2 else None
+        )
+        return root
