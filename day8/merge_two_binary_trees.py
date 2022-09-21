@@ -91,7 +91,8 @@ None, None, None, None, 9, None]
 
             if all((x is None for x in queue)):
                 break
-
+        if items[-1] is None:
+            items = items[:-1]
         return items
 
 
