@@ -50,4 +50,15 @@ class Node:
 
 class Solution:
     def connect(self, root: "Optional[Node]") -> "Optional[Node]":
-        """ """
+        current = root
+        next_pointer = root.left if root else None
+
+        while current and next_pointer:
+            current.left.next = current.right
+            if current.next:
+                current.right.next = current.next.left
+            current = current.next
+            if not current:
+                current = next_pointer
+                next_pointer = current.left
+        return root
