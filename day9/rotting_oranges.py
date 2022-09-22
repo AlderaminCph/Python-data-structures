@@ -12,21 +12,23 @@ orange becomes rotten.
 
 Return the minimum number of minutes that must elapse until no cell has a fresh
 orange. If this is impossible, return -1.
-
->>> orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
+>>> solution = Solution()
+>>> solution.orangesRotting([[2,1,1],[1,1,0],[0,1,1]])
 4
 
 Example 2:
 
->>> orangesRotting([2,1,1],[0,1,1],[1,0,1]])
+>>> solution.orangesRotting([[2,1,1],[0,1,1],[1,0,1]])
 -1
+
 Explanation: The orange in the bottom left corner (row 2, column 0) is never
 rotten, because rotting only happens 4-directionally.
 
 Example 3:
 
->>> orangesRotting([[0,2]])
+>>> solution.orangesRotting([[0,2]])
 0
+
 Explanation: Since there are already no fresh oranges at minute 0, the answer
 is just 0.
 
@@ -68,9 +70,9 @@ class Solution:
                         or grid[row][col] != 1
                     ):
                         continue
-                    grid[row][col] == 2  # make orange rotten
+                    grid[row][col] = 2  # make orange rotten
+                    q.append([row, col])
                     fresh -= 1  # decrement the number of fresh oranges
-                    q.append([row][col])
             time += 1
         return time if fresh == 0 else -1
 
