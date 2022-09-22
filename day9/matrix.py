@@ -8,12 +8,12 @@ The distance between two adjacent cells is 1.
 
 Example 1:
 >>> updateMatrix([[0,0,0],[0,1,0],[0,0,0]])
-[[0,0,0],[0,1,0],[0,0,0]]
+[[0, 0, 0], [0, 1, 0], [0, 0, 0]]
 
 >>> updateMatrix([[0,0,0],[0,1,0],[1,1,1]])
-[[0,0,0],[0,1,0],[1,2,1]]
+[[0, 0, 0], [0, 1, 0], [1, 2, 1]]
 """
-import doctests
+import doctest
 from typing import List
 
 
@@ -37,10 +37,10 @@ def updateMatrix(mat: List[List[int]]) -> List[List[int]]:
             nr = row + dx
             nc = column + dy
 
-            if 0 <= nr <= height and 0 <= nc <= width and mat[nr][nc] == "#":
+            if 0 <= nr < height and 0 <= nc < width and mat[nr][nc] == "#":
                 mat[nr][nc] = mat[row][column] + 1
                 q.append((nr, nc))
     return mat
 
 
-doctests.testmod()
+doctest.testmod()
