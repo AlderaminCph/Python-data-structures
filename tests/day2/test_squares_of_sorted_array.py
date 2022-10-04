@@ -1,6 +1,6 @@
 import pytest
 
-from day2.squares_of_sorted_array import sortedSquares
+from day2_two_pointers.squares_of_sorted_array import sortedSquares
 
 
 @pytest.mark.parametrize(

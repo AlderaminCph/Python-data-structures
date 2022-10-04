@@ -1,5 +1,5 @@
 import pytest
-from day4.reverse_string import reverseString
+from day4_two_pointers.reverse_string import reverseString
 
 
 @pytest.mark.parametrize(

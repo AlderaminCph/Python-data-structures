@@ -1,5 +1,5 @@
 import pytest
-from day2.rotate_array import rotate
+from day2_two_pointers.rotate_array import rotate
 
 
 @pytest.mark.parametrize(

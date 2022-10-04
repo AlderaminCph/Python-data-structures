@@ -1,5 +1,5 @@
 import pytest
-from day3.twosum2 import twoSum
+from day3_two_pointers.twosum2 import twoSum
 
 
 @pytest.mark.parametrize(

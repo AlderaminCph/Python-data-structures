@@ -1,5 +1,8 @@
 import pytest
-from day10.merge_two_sorted_lists_21 import LinkedList, mergeTwoLists
+from day10_recursion_backtracking.merge_two_sorted_lists_21 import (
+    LinkedList,
+    mergeTwoLists,
+)
 
 
 @pytest.mark.parametrize(

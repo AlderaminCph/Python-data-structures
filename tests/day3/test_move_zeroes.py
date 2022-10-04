@@ -1,5 +1,5 @@
 import pytest
-from day3.move_zeroes import moveZeroes
+from day3_two_pointers.move_zeroes import moveZeroes
 
 
 @pytest.mark.parametrize(

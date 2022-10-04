@@ -1,6 +1,6 @@
 import pytest
 
-from day1.guess_number import guessNumber
+from day1_binary_search.guess_number import guessNumber
 
 
 @pytest.mark.parametrize(

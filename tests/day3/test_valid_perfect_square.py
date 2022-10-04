@@ -1,6 +1,6 @@
 import pytest
 
-from day3.valid_perfect_square import isPerfectSquare
+from day3_two_pointers.valid_perfect_square import isPerfectSquare
 
 
 @pytest.mark.parametrize(

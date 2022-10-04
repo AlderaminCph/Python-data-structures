@@ -1,6 +1,6 @@
 import pytest
 
-from day1.binary_search import search
+from day1_binary_search.binary_search import search
 
 
 @pytest.mark.parametrize(

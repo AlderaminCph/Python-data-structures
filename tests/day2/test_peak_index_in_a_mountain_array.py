@@ -1,6 +1,8 @@
 import pytest
 
-from day2.peak_index_in_a_mountain_array import peakIndexInMountainArray
+from day2_two_pointers.peak_index_in_a_mountain_array import (
+    peakIndexInMountainArray,
+)
 
 
 @pytest.mark.parametrize(

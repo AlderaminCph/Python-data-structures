@@ -1,5 +1,5 @@
 import pytest
-from day5.remove_node_from_end import LinkedList, removeNthFromEnd
+from day5_two_pointers.remove_node_from_end import LinkedList, removeNthFromEnd
 
 
 @pytest.mark.parametrize(

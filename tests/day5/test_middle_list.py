@@ -1,6 +1,6 @@
 import pytest
 
-from day5.middle_of_the_linked_list import LinkedList, middleNode
+from day5_two_pointers.middle_of_the_linked_list import LinkedList, middleNode
 
 
 @pytest.mark.parametrize(

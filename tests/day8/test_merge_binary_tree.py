@@ -1,6 +1,9 @@
 import pytest
 
-from day8.merge_two_binary_trees import TreeNode, Solution
+from day8_breadth_first_search_depth_first_search.merge_two_binary_trees import (  # noqa
+    TreeNode,
+    Solution,
+)
 from typing import List
 
 

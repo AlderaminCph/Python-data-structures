@@ -1,5 +1,7 @@
 import pytest
-from day3.distance_value_between_two_arrays import findTheDistanceValue
+from day3_two_pointers.distance_value_between_two_arrays import (
+    findTheDistanceValue,
+)
 
 
 @pytest.mark.parametrize(

@@ -1,6 +1,6 @@
 import pytest
 
-from day1.search_insert_position import searchInsert
+from day1_binary_search.search_insert_position import searchInsert
 
 
 @pytest.mark.parametrize(
