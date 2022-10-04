@@ -14,7 +14,7 @@ def test_mergeTwoList(list1, list2, merged_list):
     for item in list2[::-1]:
         Second.push(item)
 
-    head_merged_list = mergeTwoLists(First, Second)
+    head_merged_list = mergeTwoLists(First.head, Second.head)
     result = []
     while head_merged_list:
         result.append(head_merged_list.val)
