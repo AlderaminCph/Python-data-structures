@@ -28,6 +28,16 @@ class ListNode:
         self.next = next
 
 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, val):
+        new_node = ListNode(val)
+        new_node.next = self.head
+        self.head = new_node
+
+
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # create two pointers
