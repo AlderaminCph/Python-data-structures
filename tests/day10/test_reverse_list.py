@@ -8,9 +8,13 @@ from typing import List
     [([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]), ([1, 2], [2, 1]), ([], [])],
 )
 def test_reverse_list(initial_list: List[int], reverse_list: List[int]):
-    initial, reverse = LinkedList(), LinkedList()
-    for item, rev in zip(initial_list[::-1], reverse_list[::-1]):
+    initial = LinkedList()
+    for item in initial_list[::-1]:
         initial.push(item)
-        reverse.push(rev)
     s = Solution()
-    assert reverse.head == s.reverseList(initial.head)
+    curr = s.reverseList(initial.head)
+    res = []
+    while curr:
+        res.append(curr.val)
+        curr = curr.next
+    assert res == reverse_list
