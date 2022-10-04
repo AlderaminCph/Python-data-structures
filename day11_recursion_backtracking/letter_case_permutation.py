@@ -21,7 +21,20 @@ import doctest
 
 class Solution:
     def letterCasePermutation(self, s: str) -> List[str]:
-        """ """
+        output = [""]
+
+        for char in s:
+            tmp = []
+            if char.isalpha():
+                for item in output:
+                    tmp.append(item + char.lower())
+                    tmp.append(item + char.upper())
+            else:
+                for item in output:
+                    tmp.append(item + char)
+            output = tmp
+
+        return output
 
 
 doctest.testmod()
