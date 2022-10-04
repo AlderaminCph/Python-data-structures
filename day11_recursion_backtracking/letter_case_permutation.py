@@ -8,11 +8,11 @@ any order.
 Example 1:
 >>> s = Solution()
 >>> s.letterCasePermutation("a1b2")
-["a1b2", "a1B2", "A1b2", "A1B2"]
+['a1b2', 'a1B2', 'A1b2', 'A1B2']
 
 Example 2:
->>> s.letterCasePermutation(""3z4"")
-["3z4", "3Z4"]
+>>> s.letterCasePermutation("3z4")
+['3z4', '3Z4']
 
 """
 from typing import List
